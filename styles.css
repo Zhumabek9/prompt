@@ -62,9 +62,8 @@ a {
 
 /* Announcement Bar */
 .announce-bar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: relative;
+    z-index: 1000;
     background: linear-gradient(90deg, #b3001b, #e11d2a, #b3001b);
     color: var(--text-white);
     text-align: center;
@@ -82,8 +81,9 @@ header {
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
-    position: relative;
-    z-index: 99;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .nav-container {
