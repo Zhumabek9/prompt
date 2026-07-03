@@ -32,7 +32,6 @@
 </head>
 <body>
 <!-- Sticky Announcement Bar -->
-
 <!-- Header Navigation -->
 <header><div class="announce-bar">
         🚨 LIMITED LAUNCH PROMO: 85% OFF ENDS SOON 🚨
@@ -1218,7 +1217,17 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
                     alert("DEMO CHECKOUT:\n\nIn production, this button redirects to:\n" + checkoutUrl + "\n\nTo configure real payments:\n1. Go to your Stripe Dashboard -> Payment Links.\n2. Create pricing for $6.99, $14.99, and $4.99.\n3. Paste your links into the STRIPE_CHECKOUT_LINKS variable at the top of the <script> block in index.html!");
                 }, 600);
             }
-        }</script>
+        }
+
+        // 18. Smooth Scroll to Offer Section on Mobile
+        function scrollToOffer(event) {
+            if (event) event.preventDefault();
+            const offerSec = document.getElementById("offer");
+            if (offerSec) {
+                offerSec.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+    </script>
 <div class="toast-container">
 <div class="toast" id="copyToast">
 <i class="fa-solid fa-circle-check"></i>
@@ -1247,7 +1256,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 </div>
 </div>
 <div class="mobile-sticky-cta" id="mobileStickyCta">
-<a class="btn-sticky-buy" href="#offer">
+<a class="btn-sticky-buy" href="#" onclick="scrollToOffer(event)">
 <i class="fa-solid fa-bolt-lightning"></i> Get 300+ Prompts Pack — $6.99
             </a>
 </div>

@@ -2153,3 +2153,28 @@ body.light-mode .chat-input-field {
         max-width: 100% !important;
     }
 }
+
+
+/* Reposition chat and FOMO widgets on mobile to float above sticky buy button */
+@media (max-width: 768px) {
+    .chat-widget-container {
+        bottom: 96px !important;
+        right: 16px !important;
+    }
+    
+    .fomo-container {
+        bottom: 96px !important;
+        left: 16px !important;
+        right: 16px !important;
+        max-width: calc(100% - 32px) !important;
+    }
+    
+    .fomo-popup {
+        width: 100% !important;
+        transform: translateY(150px);
+    }
+    
+    .fomo-popup.show {
+        transform: translateY(0);
+    }
+}
