@@ -94,3 +94,23 @@ Set up this 3-day automation sequence in your email marketing software (e.g., Ma
     >
     > See you inside,
     > The PROMPTGOAT Team
+
+---
+
+## 🚀 Post-Purchase Upsell (Thank-You Page Flow)
+
+To maximize your **Average Order Value (AOV)**, we have created a dedicated post-purchase upsell page: [thank-you.html](file:///C:/Users/juma9/Downloads/Product_Photography_Prompts_Website/thank-you.html).
+
+### How to set up on Stripe:
+1. Go to your **Stripe Dashboard** -> **Payment Links**.
+2. Edit your **Basic Plan ($6.99)** and **OTO Special ($4.99)** Payment Links.
+3. Under the **After payment** section:
+   * Select **Don't show confirmation page**.
+   * Choose **Redirect customers to your website**.
+   * Enter your live URL pointing to the thank-you page: `https://yourdomain.com/thank-you.html`.
+4. Now, when a customer completes their purchase, they are redirected to this beautiful thank-you page instead of being sent directly to Google Drive.
+5. On the thank-you page:
+   * They get direct download access to the Google Drive links.
+   * They are presented with a **One-Time Post-Purchase Upgrade Offer (VIP AI Agency Pack for $19.99)**.
+   * If they click the upgrade button, they go to your Stripe Checkout for the $19.99 tier, doubling or tripling your revenue per customer!
+

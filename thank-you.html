@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You For Your Purchase! - PROMPTGOAT</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;900&family=Inter:wght@400;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .thank-you-container {
+            max-width: 650px;
+            margin: 100px auto;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            color: var(--accent-lime);
+            margin-bottom: 24px;
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(158, 235, 71, 0.4)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(158, 235, 71, 0.8)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(158, 235, 71, 0.4)); }
+        }
+        
+        .thank-you-container h1 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        
+        .thank-you-container p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        .download-box {
+            background: var(--bg-dark-gray);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 48px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .download-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        
+        .btn-access {
+            display: inline-block;
+            background: var(--accent-lime);
+            color: var(--text-dark);
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            box-shadow: 0 0 25px rgba(158, 235, 71, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-access:hover {
+            background: var(--accent-yellow);
+            transform: translateY(-2px);
+        }
+        
+        /* Upsell OTO Block */
+        .upsell-box {
+            background: rgba(255, 225, 77, 0.03);
+            border: 2px dashed var(--accent-yellow);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: left;
+            position: relative;
+            margin-top: 40px;
+            box-shadow: 0 15px 40px rgba(255, 225, 77, 0.05);
+        }
+        
+        .upsell-badge {
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: var(--accent-yellow);
+            color: var(--text-dark);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 900;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        .upsell-box h2 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-white);
+            margin-top: 10px;
+            margin-bottom: 16px;
+        }
+        
+        .upsell-price {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin-bottom: 20px;
+        }
+        
+        .upsell-price span {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-left: 8px;
+        }
+        
+        .upsell-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .upsell-features li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .upsell-features li i {
+            color: var(--accent-yellow);
+        }
+        
+        .btn-upsell {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--accent-yellow);
+            color: var(--text-dark);
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(255, 225, 77, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-upsell:hover {
+            background: var(--accent-lime);
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(158, 235, 71, 0.4);
+        }
+        
+        .no-thanks {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        
+        .no-thanks:hover {
+            color: var(--text-white);
+        }
+        
+        @media (max-width: 576px) {
+            .thank-you-container {
+                padding: 20px;
+                margin: 40px auto;
+            }
+            .upsell-box {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="thank-you-container">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h1>Payment Successful!</h1>
+            <p>Thank you for choosing PROMPTGOAT. Your transaction was processed securely. You can now access your purchase below.</p>
+            
+            <div class="download-box">
+                <h3>Your Prompt Files are Ready</h3>
+                <p style="margin-bottom: 20px; font-size: 0.95rem;">Click the button below to open your Google Drive delivery folder containing all PDF prompt books and visual assets.</p>
+                <a href="https://drive.google.com/drive/folders/1dHXKvcqlRoXRzVv2LbiH3tcojZsBtNAD?usp=drive_link" target="_blank" class="btn-access">
+                    <i class="fa-solid fa-folder-open"></i> Access My Prompts Folder
+                </a>
+            </div>
+            
+            <!-- One-Time Post-Purchase Upsell Offer -->
+            <div class="upsell-box">
+                <div class="upsell-badge">ONE-TIME ORDER UPGRADE</div>
+                <h2>Turn Your Prompts Into an Agency</h2>
+                <p>Want to start charging clients $500+ per product render? Upgrade your order to the **VIP AI Agency Toolkit**.</p>
+                
+                <div class="upsell-price">
+                    Only $19.99 <span>Regularly $99.00</span>
+                </div>
+                
+                <ul class="upsell-features">
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>1,000+ Extra Prompts</strong> (Limestone, studio, liquid glass backdrops)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>Cold Outreach Email Template Pack</strong> to find clients</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>Commercial Client Contract Template</strong> (worth $300)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>AI Agency Scaling Video Playbook</strong></li>
+                </ul>
+                
+                <!-- Replace href with real Stripe Payment Link for VIP Upgrade if needed -->
+                <a href="https://buy.stripe.com/5kQ00kbMyg99grlf63a7C02" class="btn-upsell">
+                    <i class="fa-solid fa-arrow-up-right-dots"></i> Upgrade My Order for $19.99
+                </a>
+                
+                <div style="text-align: center;">
+                    <a href="https://drive.google.com/drive/folders/1dHXKvcqlRoXRzVv2LbiH3tcojZsBtNAD?usp=drive_link" target="_blank" class="no-thanks">
+                        No thanks, just access my initial purchase
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
