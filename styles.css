@@ -25,6 +25,12 @@ html {
     --font-mono: 'Space Mono', monospace;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 body {
     font-family: var(--font-sans);
     background-color: var(--bg-black);
@@ -1274,18 +1280,19 @@ footer {
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 280px;
         height: 100vh;
         background: #090909;
         border-left: 1px solid var(--border-color);
         padding: 100px 32px 32px;
-        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 100;
     }
     
     .nav-links.mobile-active {
-        right: 0;
+        transform: translateX(0);
     }
     
     .nav-links li {
