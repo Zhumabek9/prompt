@@ -851,6 +851,71 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 </div>
 </footer>
 <!-- Vanilla Javascript Logic -->
+
+<div class="toast-container">
+<div class="toast" id="copyToast">
+<i class="fa-solid fa-circle-check"></i>
+<span>Template copied! Import directly into AI generators.</span>
+</div>
+</div>
+<div class="modal-overlay" id="exitModal" onclick="closeExitModal()">
+<div class="modal-box" onclick="event.stopPropagation()">
+<button class="modal-close" onclick="closeExitModal()">×</button>
+<div class="modal-discount">10% OFF</div>
+<h3>Wait! Don't Leave Empty-Handed</h3>
+<p>Get an extra 10% discount on the PRO Bundle today. Use this code at checkout to claim your deal:</p>
+<div class="coupon-code">GOAT10</div>
+<button class="btn-buy-large" onclick="closeExitModal(); window.location.href='#offer';">
+                    CLAIM MY 10% DISCOUNT
+                </button>
+</div>
+</div>
+<div class="fomo-container">
+<div class="fomo-popup" id="fomoPopup">
+<div class="fomo-icon"><i class="fa-solid fa-circle-check"></i></div>
+<div class="fomo-details">
+<h5 id="fomoName">Sarah from London</h5>
+<p id="fomoAction">just purchased the PRO Bundle!</p>
+</div>
+</div>
+</div>
+<div class="mobile-sticky-cta" id="mobileStickyCta">
+<a class="btn-sticky-buy" href="#" onclick="checkout('basic', event)">
+<i class="fa-solid fa-bolt-lightning"></i> Get 300+ Prompts Pack — $6.99
+            </a>
+</div>
+<div class="modal-overlay" id="otoModal" onclick="closeOtoModal()">
+<div class="modal-box" onclick="event.stopPropagation()">
+<button class="modal-close" onclick="closeOtoModal()">×</button>
+<div style="background:var(--accent-lime); color:var(--text-dark); display:inline-block; padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:16px;">
+                    🎉 Email Confirmed! Your Free PDF is Sent
+                </div>
+<h3>Wait! One-Time-Offer (OTO) for New Subscribers</h3>
+<p>Unlock all 300+ prompts, 4 bonuses, and the commercial license right now for only **$4.99** instead of $6.99. This special price is only valid on this page and expires in 10 minutes!</p>
+<div id="otoTimer" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:900; color:var(--accent-yellow); margin-bottom:24px;">
+                    09:59
+                </div>
+<a class="btn-buy-large" href="#" onclick="checkout('oto', event)">
+<i class="fa-solid fa-bolt-lightning"></i> CLAIM SPECIAL $4.99 DEAL
+                </a>
+</div>
+</div>
+<div class="chat-widget-container">
+<div class="chat-bubble" onclick="toggleChatBox()"><i class="fa-solid fa-comments"></i></div>
+<div class="chat-box" id="chatBox">
+<div class="chat-header">
+<h4>PROMPTGOAT Support Bot</h4>
+<button class="chat-close" onclick="toggleChatBox()">×</button>
+</div>
+<div class="chat-messages" id="chatMessages">
+<div class="chat-msg bot">Hi! I'm the PROMPTGOAT helper bot. Feel free to ask me any questions about the 300+ Product Prompts Pack!</div>
+</div>
+<div class="chat-input-area">
+<input class="chat-input-field" id="chatInput" onkeydown="if(event.key==='Enter') sendChatMessage()" placeholder="Type a message..." type="text"/>
+<button class="chat-send-btn" onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+</div>
+</div>
+</div>
 <script>
         // 1. Hero Slider Carousel Logic
         let slideIndex = 0;
@@ -1093,24 +1158,23 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
         const stickyCta = document.getElementById("mobileStickyCta");
         const offerSection = document.getElementById("offer");
         
-        const offerObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // If offer section is visible, hide the sticky mobile CTA
-                if (entry.isIntersecting) {
-                    stickyCta.style.transform = "translateY(100px)";
-                    stickyCta.style.opacity = "0";
-                    stickyCta.style.pointerEvents = "none";
-                } else {
-                    stickyCta.style.transform = "translateY(0)";
-                    stickyCta.style.opacity = "1";
-                    stickyCta.style.pointerEvents = "auto";
-                }
+        if (stickyCta && offerSection) {
+            const offerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If offer section is visible, hide the sticky mobile CTA
+                    if (entry.isIntersecting) {
+                        stickyCta.style.transform = "translateY(100px)";
+                        stickyCta.style.opacity = "0";
+                        stickyCta.style.pointerEvents = "none";
+                    } else {
+                        stickyCta.style.transform = "translateY(0)";
+                        stickyCta.style.opacity = "1";
+                        stickyCta.style.pointerEvents = "auto";
+                    }
+                });
+            }, {
+                threshold: 0.05
             });
-        }, {
-            threshold: 0.05
-        });
-        
-        if (offerSection && stickyCta) {
             offerObserver.observe(offerSection);
         }
     
@@ -1227,70 +1291,5 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
                 offerSec.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         }
-    </script>
-<div class="toast-container">
-<div class="toast" id="copyToast">
-<i class="fa-solid fa-circle-check"></i>
-<span>Template copied! Import directly into AI generators.</span>
-</div>
-</div>
-<div class="modal-overlay" id="exitModal" onclick="closeExitModal()">
-<div class="modal-box" onclick="event.stopPropagation()">
-<button class="modal-close" onclick="closeExitModal()">×</button>
-<div class="modal-discount">10% OFF</div>
-<h3>Wait! Don't Leave Empty-Handed</h3>
-<p>Get an extra 10% discount on the PRO Bundle today. Use this code at checkout to claim your deal:</p>
-<div class="coupon-code">GOAT10</div>
-<button class="btn-buy-large" onclick="closeExitModal(); window.location.href='#offer';">
-                    CLAIM MY 10% DISCOUNT
-                </button>
-</div>
-</div>
-<div class="fomo-container">
-<div class="fomo-popup" id="fomoPopup">
-<div class="fomo-icon"><i class="fa-solid fa-circle-check"></i></div>
-<div class="fomo-details">
-<h5 id="fomoName">Sarah from London</h5>
-<p id="fomoAction">just purchased the PRO Bundle!</p>
-</div>
-</div>
-</div>
-<div class="mobile-sticky-cta" id="mobileStickyCta">
-<a class="btn-sticky-buy" href="#" onclick="checkout('basic', event)">
-<i class="fa-solid fa-bolt-lightning"></i> Get 300+ Prompts Pack — $6.99
-            </a>
-</div>
-<div class="modal-overlay" id="otoModal" onclick="closeOtoModal()">
-<div class="modal-box" onclick="event.stopPropagation()">
-<button class="modal-close" onclick="closeOtoModal()">×</button>
-<div style="background:var(--accent-lime); color:var(--text-dark); display:inline-block; padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:16px;">
-                    🎉 Email Confirmed! Your Free PDF is Sent
-                </div>
-<h3>Wait! One-Time-Offer (OTO) for New Subscribers</h3>
-<p>Unlock all 300+ prompts, 4 bonuses, and the commercial license right now for only **$4.99** instead of $6.99. This special price is only valid on this page and expires in 10 minutes!</p>
-<div id="otoTimer" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:900; color:var(--accent-yellow); margin-bottom:24px;">
-                    09:59
-                </div>
-<a class="btn-buy-large" href="#" onclick="checkout('oto', event)">
-<i class="fa-solid fa-bolt-lightning"></i> CLAIM SPECIAL $4.99 DEAL
-                </a>
-</div>
-</div>
-<div class="chat-widget-container">
-<div class="chat-bubble" onclick="toggleChatBox()"><i class="fa-solid fa-comments"></i></div>
-<div class="chat-box" id="chatBox">
-<div class="chat-header">
-<h4>PROMPTGOAT Support Bot</h4>
-<button class="chat-close" onclick="toggleChatBox()">×</button>
-</div>
-<div class="chat-messages" id="chatMessages">
-<div class="chat-msg bot">Hi! I'm the PROMPTGOAT helper bot. Feel free to ask me any questions about the 300+ Product Prompts Pack!</div>
-</div>
-<div class="chat-input-area">
-<input class="chat-input-field" id="chatInput" onkeydown="if(event.key==='Enter') sendChatMessage()" placeholder="Type a message..." type="text"/>
-<button class="chat-send-btn" onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
-</div>
-</div>
-</div>
-</body>
+    </script></body>
 </html>
