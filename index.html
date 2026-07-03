@@ -12,8 +12,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <!-- Custom CSS -->
 <link href="styles.css" rel="stylesheet"/>
-<script type="application/ld+json">
-        {
+<script type="application/ld+json">{
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Studio-Quality E-Commerce Product Photography Prompts Pack",
@@ -29,79 +28,7 @@
             "ratingValue": "4.9",
             "reviewCount": "1240"
           }
-        }
-        
-
-        // 15. Light/Dark Theme Toggle Logic
-        function toggleTheme() {
-            document.body.classList.toggle("light-mode");
-            const icon = document.querySelector(".theme-toggle-btn i");
-            if (document.body.classList.contains("light-mode")) {
-                icon.className = "fa-solid fa-sun";
-            } else {
-                icon.className = "fa-solid fa-moon";
-            }
-        }
-
-        // 16. Floating Chat Support Box Logic
-        function toggleChatBox() {
-            const chatBox = document.getElementById("chatBox");
-            chatBox.classList.toggle("open");
-        }
-
-        function sendChatMessage() {
-            const input = document.getElementById("chatInput");
-            const text = input.value.trim();
-            if (!text) return;
-            
-            // Append user message
-            const msgsContainer = document.getElementById("chatMessages");
-            const userMsg = document.createElement("div");
-            userMsg.className = "chat-msg user";
-            userMsg.innerText = text;
-            msgsContainer.appendChild(userMsg);
-            
-            input.value = "";
-            msgsContainer.scrollTop = msgsContainer.scrollHeight;
-            
-            // Generate bot response after 1 second
-            setTimeout(() => {
-                const botMsg = document.createElement("div");
-                botMsg.className = "chat-msg bot";
-                botMsg.innerText = "Thanks for asking! Our support agents usually reply via email within 2-3 hours. In the meantime, please check the FAQ section on the page!";
-                msgsContainer.appendChild(botMsg);
-                msgsContainer.scrollTop = msgsContainer.scrollHeight;
-            }, 1000);
-        }
-    
-
-        // 17. Stripe Checkout Links Routing Configuration
-        const STRIPE_CHECKOUT_LINKS = {
-            basic: "https://buy.stripe.com/28E5kE17U2ij4ID9LJa7C01",
-            pro: "https://buy.stripe.com/5kQ00kbMyg99grlf63a7C02",
-            oto: "https://buy.stripe.com/9B68wQ7wi3mnejd1fda7C03"
-        };
-
-        function checkout(planType, event) {
-            if (event) event.preventDefault();
-            
-            const checkoutUrl = STRIPE_CHECKOUT_LINKS[planType];
-            
-            // If user has replaced the mock link, redirect to Stripe
-            if (checkoutUrl && !checkoutUrl.includes("mock_")) {
-                showToast("Redirecting to Stripe secure checkout...");
-                setTimeout(() => {
-                    window.location.href = checkoutUrl;
-                }, 800);
-            } else {
-                // Otherwise show a helpful developer sandbox notice
-                showToast("Demo Mode: Checkout initiated.");
-                setTimeout(() => {
-                    alert("DEMO CHECKOUT:\n\nIn production, this button redirects to:\n" + checkoutUrl + "\n\nTo configure real payments:\n1. Go to your Stripe Dashboard -> Payment Links.\n2. Create pricing for $6.99, $14.99, and $4.99.\n3. Paste your links into the STRIPE_CHECKOUT_LINKS variable at the top of the <script> block in index.html!");
-                }, 600);
-            }
-        }
-    </script>
+        }</script>
 </head>
 <body>
 <!-- Sticky Announcement Bar -->
@@ -1221,7 +1148,77 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
                 timerEl.innerText = (mins < 10 ? "0" + mins : mins) + ":" + (secs < 10 ? "0" + secs : secs);
             }, 1000);
         }
-    </script>
+    
+
+// 15. Light/Dark Theme Toggle Logic
+        function toggleTheme() {
+            document.body.classList.toggle("light-mode");
+            const icon = document.querySelector(".theme-toggle-btn i");
+            if (document.body.classList.contains("light-mode")) {
+                icon.className = "fa-solid fa-sun";
+            } else {
+                icon.className = "fa-solid fa-moon";
+            }
+        }
+
+        // 16. Floating Chat Support Box Logic
+        function toggleChatBox() {
+            const chatBox = document.getElementById("chatBox");
+            chatBox.classList.toggle("open");
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById("chatInput");
+            const text = input.value.trim();
+            if (!text) return;
+            
+            // Append user message
+            const msgsContainer = document.getElementById("chatMessages");
+            const userMsg = document.createElement("div");
+            userMsg.className = "chat-msg user";
+            userMsg.innerText = text;
+            msgsContainer.appendChild(userMsg);
+            
+            input.value = "";
+            msgsContainer.scrollTop = msgsContainer.scrollHeight;
+            
+            // Generate bot response after 1 second
+            setTimeout(() => {
+                const botMsg = document.createElement("div");
+                botMsg.className = "chat-msg bot";
+                botMsg.innerText = "Thanks for asking! Our support agents usually reply via email within 2-3 hours. In the meantime, please check the FAQ section on the page!";
+                msgsContainer.appendChild(botMsg);
+                msgsContainer.scrollTop = msgsContainer.scrollHeight;
+            }, 1000);
+        }
+    
+
+        // 17. Stripe Checkout Links Routing Configuration
+        const STRIPE_CHECKOUT_LINKS = {
+            basic: "https://buy.stripe.com/28E5kE17U2ij4ID9LJa7C01",
+            pro: "https://buy.stripe.com/5kQ00kbMyg99grlf63a7C02",
+            oto: "https://buy.stripe.com/9B68wQ7wi3mnejd1fda7C03"
+        };
+
+        function checkout(planType, event) {
+            if (event) event.preventDefault();
+            
+            const checkoutUrl = STRIPE_CHECKOUT_LINKS[planType];
+            
+            // If user has replaced the mock link, redirect to Stripe
+            if (checkoutUrl && !checkoutUrl.includes("mock_")) {
+                showToast("Redirecting to Stripe secure checkout...");
+                setTimeout(() => {
+                    window.location.href = checkoutUrl;
+                }, 800);
+            } else {
+                // Otherwise show a helpful developer sandbox notice
+                showToast("Demo Mode: Checkout initiated.");
+                setTimeout(() => {
+                    alert("DEMO CHECKOUT:\n\nIn production, this button redirects to:\n" + checkoutUrl + "\n\nTo configure real payments:\n1. Go to your Stripe Dashboard -> Payment Links.\n2. Create pricing for $6.99, $14.99, and $4.99.\n3. Paste your links into the STRIPE_CHECKOUT_LINKS variable at the top of the <script> block in index.html!");
+                }, 600);
+            }
+        }</script>
 <div class="toast-container">
 <div class="toast" id="copyToast">
 <i class="fa-solid fa-circle-check"></i>
