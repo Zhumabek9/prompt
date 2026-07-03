@@ -73,6 +73,34 @@
                 msgsContainer.scrollTop = msgsContainer.scrollHeight;
             }, 1000);
         }
+    
+
+        // 17. Stripe Checkout Links Routing Configuration
+        const STRIPE_CHECKOUT_LINKS = {
+            basic: "https://buy.stripe.com/mock_basic_plan_6_99", // Replace with your Stripe Payment Link for $6.99 Basic Plan
+            pro: "https://buy.stripe.com/mock_pro_bundle_14_99",   // Replace with your Stripe Payment Link for $14.99 PRO Bundle
+            oto: "https://buy.stripe.com/mock_oto_discount_4_99"  // Replace with your Stripe Payment Link for $4.99 OTO Discount
+        };
+
+        function checkout(planType, event) {
+            if (event) event.preventDefault();
+            
+            const checkoutUrl = STRIPE_CHECKOUT_LINKS[planType];
+            
+            // If user has replaced the mock link, redirect to Stripe
+            if (checkoutUrl && !checkoutUrl.includes("mock_")) {
+                showToast("Redirecting to Stripe secure checkout...");
+                setTimeout(() => {
+                    window.location.href = checkoutUrl;
+                }, 800);
+            } else {
+                // Otherwise show a helpful developer sandbox notice
+                showToast("Demo Mode: Checkout initiated.");
+                setTimeout(() => {
+                    alert("DEMO CHECKOUT:\n\nIn production, this button redirects to:\n" + checkoutUrl + "\n\nTo configure real payments:\n1. Go to your Stripe Dashboard -> Payment Links.\n2. Create pricing for $6.99, $14.99, and $4.99.\n3. Paste your links into the STRIPE_CHECKOUT_LINKS variable at the top of the <script> block in index.html!");
+                }, 600);
+            }
+        }
     </script>
 </head>
 <body>
@@ -87,7 +115,6 @@
 <i class="fa-solid fa-wand-magic-sparkles"></i> PROMPT<span>GOAT</span>
 </a>
 <button class="menu-toggle" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button><ul class="nav-links">
-
 <li><a href="#categories">Categories</a></li>
 <li><a href="#catalog">Interactive Playground</a></li>
 <li><a href="#faq">FAQ</a></li>
@@ -795,7 +822,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 <li><i class="fa-solid fa-circle-check"></i> Personal License</li>
 <li><i class="fa-solid fa-circle-check"></i> Lifetime Updates</li>
 </ul>
-<a class="btn-buy-large" download="" href="Studio_Quality_Product_Photography_Prompts.pdf" onclick="showToast()">
+<a class="btn-buy-large" href="#" onclick="checkout('basic', event)">
 <i class="fa-solid fa-bolt-lightning"></i> DOWNLOAD PDF
                     </a>
 </div>
@@ -810,7 +837,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 <li><i class="fa-solid fa-circle-check"></i> 4 Premium Bonus Booklets</li>
 <li><i class="fa-solid fa-circle-check"></i> Backdrops reference database</li>
 </ul>
-<a class="btn-buy-large" download="" href="Studio_Quality_Product_Photography_Prompts.pdf" onclick="showToast()">
+<a class="btn-buy-large" href="#" onclick="checkout('pro', event)">
 <i class="fa-solid fa-bolt-lightning"></i> GET BUNDLE
                     </a>
 </div>
@@ -883,7 +910,6 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 <i class="fa-solid fa-wand-magic-sparkles"></i> PROMPT<span>GOAT</span>
 </a>
 <ul class="footer-links">
-
 <li><a href="#categories">Categories</a></li>
 <li><a href="#catalog">Playground</a></li>
 <li><a href="#faq">FAQ</a></li>
@@ -1239,7 +1265,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 <div id="otoTimer" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:900; color:var(--accent-yellow); margin-bottom:24px;">
                     09:59
                 </div>
-<a class="btn-buy-large" download="" href="Studio_Quality_Product_Photography_Prompts.pdf" onclick="closeOtoModal(); showToast('PRO Bundle downloaded!');">
+<a class="btn-buy-large" href="#" onclick="checkout('oto', event)">
 <i class="fa-solid fa-bolt-lightning"></i> CLAIM SPECIAL $4.99 DEAL
                 </a>
 </div>
