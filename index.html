@@ -34,7 +34,7 @@
 <!-- Sticky Announcement Bar -->
 <!-- Header Navigation -->
 <header><div class="announce-bar">
-        🚨 LIMITED LAUNCH PROMO: 85% OFF ENDS SOON 🚨
+        Launch Week: 85% OFF through Friday, July 10
     </div>
 <div class="nav-container">
 <a class="logo" href="#">
@@ -42,9 +42,9 @@
 </a>
 <button class="menu-toggle" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button><ul class="nav-links">
 <li><a href="#categories">Categories</a></li>
-<li><a href="#catalog">Interactive Playground</a></li>
+<li><a href="#catalog">Results</a></li>
 <li><a href="#faq">FAQ</a></li>
-<li><a class="cta-nav" href="#offer">Get Pack Now</a></li>
+<li><a class="cta-nav" href="#offer">Get Instant Access →</a></li>
 <li><button class="theme-toggle-btn" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button></li></ul>
 </div>
 </header>
@@ -80,21 +80,16 @@
 </div>
 </div>
 <a class="cta-btn" href="#offer">
-<i class="fa-solid fa-cart-shopping"></i> GET 300+ PROMPTS PACK NOW
+<i class="fa-solid fa-cart-shopping"></i> Get Instant Access →
             </a>
 </div>
 </section>
 <!-- Urgency Countdown Bar -->
-<section class="countdown-bar reveal">
+<section class="countdown-bar launch-week-bar reveal">
 <div class="countdown-container">
 <div class="countdown-message">
-<i class="fa-solid fa-clock-rotate-left fa-spin" style="color: var(--accent-lime);"></i>
-                Special launch price <span>-85% OFF</span> expires soon:
-            </div>
-<div class="timer" id="timer">
-<div class="timer-block" id="minutes">14</div>
-<div class="timer-sep">:</div>
-<div class="timer-block" id="seconds">59</div>
+<i class="fa-solid fa-calendar-check" style="color: var(--accent-lime);"></i>
+                Launch Week deal: <span>-85% OFF</span> ends Friday, July 10
 </div>
 <div class="price-box">
 <span class="price-old">$49.00</span>
@@ -252,347 +247,99 @@
 </div>
 </div>
 </section>
-<!-- Interactive Gallery Playground -->
-<section class="catalog-section reveal" id="catalog">
+<!-- Visual Results Showcase -->
+<section class="catalog-section visual-showcase reveal" id="catalog">
 <div class="container">
 <div class="section-header">
-<h2>Interactive Prompt Playground</h2>
-<p>Select a category, copy a premium prompt, and test it in your favorite AI generator right away!</p>
+<h2>See what the prompts create</h2>
+<p>Scan finished product shots first, then open one sample prompt when you want to see the structure behind the result.</p>
 </div>
 <div class="search-container">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input class="search-input" id="promptSearch" onkeyup="searchPrompts()" placeholder="Search prompts (e.g. perfume, shirt, jar)..." type="text"/>
+<input class="search-input" id="promptSearch" onkeyup="searchPrompts()" placeholder="Search results (serum, apparel, perfume, tech)..." type="text"/>
 </div>
 <div class="filter-bar">
-<button class="filter-btn active" onclick="filterCategory('all')">All Categories</button>
+<button class="filter-btn active" onclick="filterCategory('all')">All Results</button>
 <button class="filter-btn" onclick="filterCategory('beauty')">Cosmetics</button>
 <button class="filter-btn" onclick="filterCategory('fashion')">Apparel</button>
 <button class="filter-btn" onclick="filterCategory('lifestyle')">Lifestyle</button>
 <button class="filter-btn" onclick="filterCategory('tech')">Tech</button>
 </div>
-<div class="prompt-grid" id="prompt-grid">
-<!-- Card 1 -->
-<div class="prompt-card reveal breath-card" data-category="beauty">
+<div class="prompt-grid result-grid" id="prompt-grid">
+<article class="prompt-card result-card reveal breath-card" data-category="beauty" data-search="cosmetics skincare serum stone ecommerce listing">
 <div class="prompt-img-container">
-<img alt="Serum Glass Bottle" src="assets/sample_2026270010814136482.jpg"/>
+<img alt="Studio serum product photo generated from a prompt" src="assets/sample_2026270010814136482.jpg"/>
 <span class="prompt-badge">Cosmetics</span>
 </div>
 <div class="prompt-card-body">
 <h3 class="prompt-card-title">Minimalist Stone Serum</h3>
-<p class="prompt-card-model">Compatibility: Universal AI Format</p>
-<div class="prompt-box-wrapper" id="prompt-1">Minimalist studio product photography of an amber glass dropper serum bottle with white cap, labeled “ma:nyo Galac Whitening Vita Serum”, placed between large textured white stones, soft beige background, warm sunlight casting natural shadows, subtle golden glow reflecting through the glass, small delicate dried flowers beside the bottle, glossy reflective surface, high-end skincare advertisement, ultra-realistic, 85mm lens, shallow depth of field, soft diffused lighting, clean aesthetic, 8k resolution.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-1', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                        </button>
+<p class="prompt-card-model">Use case: Shopify PDP hero</p>
+<p class="result-note">Clean glass, real shadows, premium skincare texture and a ready-to-test listing image.</p>
 </div>
-</div>
-<!-- Card 2 -->
-<div class="prompt-card reveal breath-card" data-category="beauty">
+</article>
+<article class="prompt-card result-card reveal breath-card" data-category="beauty" data-search="lip mask dewy skincare flat lay cosmetics">
 <div class="prompt-img-container">
-<img alt="Lip Mask Jar" src="assets/sample_2019637570133717072.jpg"/>
+<img alt="Dewy lip mask product ad generated from a prompt" src="assets/sample_2019637570133717072.jpg"/>
 <span class="prompt-badge">Cosmetics</span>
 </div>
 <div class="prompt-card-body">
-<h3 class="prompt-card-title">Dewy Pink Lip Mask</h3>
-<p class="prompt-card-model">Compatibility: Universal AI Format</p>
-<div class="prompt-box-wrapper" id="prompt-2">A hyper-realistic beauty product photograph of a pink [LANEIGE Lip Sleeping Mask] jar placed at the center of a vibrant pastel-pink surface covered in fresh water droplets, the jar upright with a frosted pink lid and glossy translucent body, surrounded organically by delicate flowers including purple blossoms, pale lilies, yellow sprigs, and green leaves arranged diagonally around the product, soft diffused studio lighting from above creating gentle highlights and natural shadows, moisture beads sparkling across the background for a fresh dewy feel, clean skincare editorial aesthetic, feminine and luxurious mood, balanced flat-lay composition, shallow depth of field, ultra-detailed textures, photorealistic, high-end cosmetic advertising style, 8K quality</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-2', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                        </button>
+<h3 class="prompt-card-title">Dewy Lip Mask Flatlay</h3>
+<p class="prompt-card-model">Use case: Meta ad creative</p>
+<p class="result-note">Moisture beads, fresh floral framing and scroll-stopping color for skincare offers.</p>
 </div>
-</div>
-<!-- Card 3 -->
-<div class="prompt-card reveal breath-card" data-category="fashion">
+</article>
+<article class="prompt-card result-card reveal breath-card" data-category="fashion" data-search="apparel shirt fashion rack orange ecommerce">
 <div class="prompt-img-container">
-<img alt="Orange Waffle Shirt" src="assets/sample_community_fc6e5b0c-8dca-4761-b530-16acf574ca05.jpg"/>
+<img alt="Orange waffle shirt product campaign generated from a prompt" src="assets/sample_community_fc6e5b0c-8dca-4761-b530-16acf574ca05.jpg"/>
 <span class="prompt-badge">Apparel</span>
 </div>
 <div class="prompt-card-body">
 <h3 class="prompt-card-title">Waffle Crewneck Stand</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model</p>
-<div class="prompt-box-wrapper" id="prompt-3">Create a high-end fashion product advertisement poster in portrait 4:5 ratio, clean minimal editorial style using a reference product image. Background is a crisp blue gradient studio setup, very minimal, soft, airy, with subtle bright tones. Main product: a tangerine orange oversized waffle-knit long sleeve crewneck shirt, ghost-hung on a silver metal clothing rack stand. On the center chest, include white puff embroidery text: “SVG STUDIOS”, “MOTIVATION THROUGH DISCIPLINE”. Color palette is orange, white, and bright accents only. Overall style is clean editorial fashion lookbook, diffused studio lighting, high contrast product focus, photorealistic, ultra detailed, 8K quality.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-3', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                        </button>
+<p class="prompt-card-model">Use case: apparel launch image</p>
+<p class="result-note">Looks like a styled studio shoot instead of a flat supplier photo.</p>
 </div>
-</div>
-<!-- Card 4 -->
-<div class="prompt-card reveal breath-card" data-category="fashion">
+</article>
+<article class="prompt-card result-card reveal breath-card" data-category="lifestyle" data-search="lifestyle floating object product shadow minimal ad">
 <div class="prompt-img-container">
-<img alt="Fashion Runway Shop" src="assets/sample_community_71b478a2-3616-4abf-abf5-65fddcafe4f6.jpg"/>
-<span class="prompt-badge">Apparel</span>
-</div>
-<div class="prompt-card-body">
-<h3 class="prompt-card-title">Runway Shop Interface</h3>
-<p class="prompt-card-model">Compatibility: GPT Image</p>
-<div class="prompt-box-wrapper" id="prompt-4">Design a luxurious, detailed masterpiece vertical social media advertisement in 2:3 portrait aspect ratio. An elegant, visionary female founder in sophisticated yet approachable attire stands gracefully in an opulent creative space as a breathtaking, expansive TikTok Shop experience unfolds vertically like a digital runway — featuring stunning product storytelling, live streaming elements, and conversion-focused layouts cascading elegantly. Rich cinematic lighting with soft golden highlights and subtle lens flares. Opulent, high-fashion digital commerce aesthetic with rich textures and premium depth.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-4', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                        </button>
-</div>
-</div>
-<!-- Card 5 -->
-<div class="prompt-card reveal breath-card" data-category="lifestyle">
-<div class="prompt-img-container">
-<img alt="Minimalist Product Float" src="assets/sample_2072344325501972768.jpg"/>
+<img alt="Minimal floating product scene generated from a prompt" src="assets/sample_2072344325501972768.jpg"/>
 <span class="prompt-badge">Lifestyle</span>
 </div>
 <div class="prompt-card-body">
-<h3 class="prompt-card-title">Minimal Floating Object</h3>
-<p class="prompt-card-model">Compatibility: Universal AI Format</p>
-<div class="prompt-box-wrapper" id="prompt-5">Premium product shot of [Object], floating in a minimal [Color] environment, soft shadows, studio lighting, reflections on surface, hyper-realistic textures, commercial advertising style, ultra-clean composition</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-5', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                        </button>
+<h3 class="prompt-card-title">Minimal Floating Product</h3>
+<p class="prompt-card-model">Use case: hero banner</p>
+<p class="result-note">Controlled reflections and contact shadows for brand campaigns, decks and stores.</p>
 </div>
-</div>
-<!-- Card 6 -->
-<div class="prompt-card reveal breath-card" data-category="tech">
+</article>
+<article class="prompt-card result-card reveal breath-card" data-category="tech" data-search="tech fashion jacket zara varsity ad creative">
 <div class="prompt-img-container">
-<img alt="Zara Tech jacket" src="assets/sample_2072163077739712778.jpg"/>
+<img alt="Premium varsity jacket campaign generated from a prompt" src="assets/sample_2072163077739712778.jpg"/>
 <span class="prompt-badge">Tech &amp; Fashion</span>
 </div>
 <div class="prompt-card-body">
-<h3 class="prompt-card-title">Zara Premium Varsity Campaign</h3>
-<p class="prompt-card-model">Compatibility: Universal AI Format</p>
-<div class="prompt-box-wrapper" id="prompt-6">Act as a senior commercial fashion art director specializing in luxury apparel product advertising and premium social media campaigns. Create an ultra-premium product advertising poster for ZARA. Format vertical 4:5. High-end commercial product lighting, sharp rim light tracing jacket outline, hard specular highlights on sleeves, controlled glossy reflections, deep sculpted shadows, premium luxury contrast. Wool fabric detail: ultra-detailed wool grain, visible embroidery threads, knit texture. sRGB, 8K UHD.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-6', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                        </button>
+<h3 class="prompt-card-title">Varsity Campaign Shot</h3>
+<p class="prompt-card-model">Use case: paid social test</p>
+<p class="result-note">Sharp rim light, rich fabric texture and a premium catalog feel without a studio day.</p>
 </div>
-</div>
-<!-- Card 7 -->
-<div class="prompt-card reveal breath-card" data-category="beauty">
+</article>
+<article class="prompt-card result-card reveal breath-card" data-category="beauty" data-search="perfume fragrance luxury noir bottle product">
 <div class="prompt-img-container">
-<img alt="Premium Unknown Concept" src="assets/sample_2018312144358703594.jpg"/>
-<span class="prompt-badge">Cosmetics</span>
+<img alt="Luxury black perfume product image generated from a prompt" src="assets/sample_2018312144358703594.jpg"/>
+<span class="prompt-badge">Fragrance</span>
 </div>
 <div class="prompt-card-body">
-<h3 class="prompt-card-title">Premium Unknown Concept</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model / AI model</p>
-<div class="prompt-box-wrapper" id="prompt-7">Low angle luxury product photography of a black ribbed glass perfume bottle placed on a dark horizontal podium, shot from below for a heroic, monumental feel. The bottle is Tom Ford Black Orchid, matte black texture clearly visible.
-Dramatic low key studio lighting. Soft diffused key light from above and slightly left, gently lighting the label and top, revealing volume and texture. Strong hard red rim light from behind and right, creating a bold red outline along the edge and cap, with a subtle red glow bleeding into the background.
-Deep soft shadows with smooth falloff. Slightly underexposed for drama. High contrast between highlights and shadows while keeping transitions soft.
-Color palette limited to deep black and rich burgundy red, warm color balance, black remains neutral and clean.
-Matte surface shows soft red reflections, not glossy, giving depth and form.
-Minimal background, dark red gradient, cinematic mood, luxury fragrance advertising style, photorealistic, ultra high detail, studio quality.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-7', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
+<h3 class="prompt-card-title">Noir Fragrance Hero</h3>
+<p class="prompt-card-model">Use case: premium brand ad</p>
+<p class="result-note">Low-key lighting, red rim glow and enough depth for luxury fragrance creatives.</p>
+</div>
+</article>
+</div>
+<details class="example-prompt reveal">
+<summary>See example prompt</summary>
+<div class="prompt-box-wrapper example-prompt-box" id="prompt-example">Minimalist studio product photography of [PRODUCT] placed between textured white stones, soft warm sunlight, natural cast shadows, subtle golden reflections, high-end ecommerce advertising style, realistic materials, 85mm lens, shallow depth of field, clean background, ultra-detailed, 4:5 vertical composition.</div>
+<button class="btn-copy" onclick="copyPrompt('prompt-example', this)">
+<i class="fa-regular fa-copy"></i> Copy Example Prompt
                 </button>
-</div>
-</div>
-<!-- Card 8 -->
-<div class="prompt-card reveal breath-card" data-category="tech">
-<div class="prompt-img-container">
-<img alt="Premium Unknown Concept" src="assets/sample_community_b7b4f98a-c18d-47df-943a-eaff66ff5b71.png"/>
-<span class="prompt-badge">Tech</span>
-</div>
-<div class="prompt-card-body">
-<h3 class="prompt-card-title">Premium Unknown Concept</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model / AI model</p>
-<div class="prompt-box-wrapper" id="prompt-8">Create a vertical 4:5 (1080x1350) mixed-style visual for a WhatsApp blast about "QMDH". A two modern smartphone screen floating in the center showing a before/after comparison — left side before (photo1) show the QMDH as a telegram Bot and right side a show (photo 2) QMDH App. The phone screen emits a soft colors glow of the QMDH logo (photo3). 
-at the bottom of the two phonescreens add a supress phrase, more features to relveale later 
-Background: diagonal gradient from #0f172a (dark navy top-left) to #fafafa (near white bottom-right) with subtle light rays. Floating minimalist icons around: questions,correct/wrong, dental icons and small geometric shapes in transparent glassmorphism style. No real people — use abstract silhouettes or icons only. Modern, clean, tech-forward aesthetic with depth through layering and soft shadows.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-8', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                </button>
-</div>
-</div>
-<!-- Card 9 -->
-<div class="prompt-card reveal breath-card" data-category="fashion">
-<div class="prompt-img-container">
-<img alt="Premium Unknown Concept" src="assets/sample_2072539640666681743.jpg"/>
-<span class="prompt-badge">Apparel</span>
-</div>
-<div class="prompt-card-body">
-<h3 class="prompt-card-title">Premium Unknown Concept</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model / AI model</p>
-<div class="prompt-box-wrapper" id="prompt-9">Create a [Aspect Ratio] full-bleed editorial action poster for [Brand Name]. The brand’s visual identity follows these must-visible traits: a bright outdoor photograph with a clear open sky dominating a large portion of the frame; enormous warm-cream extra-condensed block letters cropped by the canvas and sitting behind the main subject; one oversized action figure cutting diagonally across the layout and breaking through the text layer; a low or close wide-angle camera angle that makes the foreground feel physically imposing; secondary text, large numerals, or stacked words in cream placed along bottom and side edges; compact white editorial microcopy in short tight clusters anchored to strong grid positions; one vivid accent color concentrated on the hero product or outfit while the environment stays sky-blue and neutral; hard midday sunlight with crisp shadows and high-contrast edges; a layered structure alternating between flat graphic type and real photography; minimal ornament — only small marks, rules, or separators; a dense, kinetic layout with the action dominant, type second, and microcopy third.
-
-Scene: [Subject] is [Subject Action] with [Product Or Prop] in [Location], surrounded by [Background Elements].
-
-Camera &amp; Composition: Low or close wide-angle outdoors, oversized foreground scale, decisive frozen motion, one strong diagonal, subject cropped by at least one canvas edge.
-
-Typography: Place massive warm-cream ultra-condensed block sans lettering reading [Main Text] behind the subject, filling over half the canvas, cropped by the frame and partially hidden by the action. Add compact white microcopy reading [Secondary Text] in tight editorial blocks. Include a small generic [Accent Symbol] mark and bottom information clusters in cream.
-
-Wardrobe: [Wardrobe Style]. Brand colors: saturated sky-blue or cyan dominant, warm cream type, crisp white microcopy, deep shadows, one vivid accent on the hero prop or wardrobe.
-
-Lighting &amp; Finish: Hard midday sun, crisp shadows, high-contrast commercial photo realism, slight print-grain texture. No illustration, 3D rendering, real logos, or watermarks.
-
-Avoid: [Source Content To Avoid]. Also exclude: real brand logos, watermarks, QR codes, comic or halftone effects, 3D renders, dark studio scenes, muted palettes, or a tiny distant subject.
-
-Generate as a 4K ultra-high-resolution raster image.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-9', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                </button>
-</div>
-</div>
-<!-- Card 10 -->
-<div class="prompt-card reveal breath-card" data-category="beauty">
-<div class="prompt-img-container">
-<img alt="Premium Unknown Concept" src="assets/sample_2025013736139096574.jpg"/>
-<span class="prompt-badge">Cosmetics</span>
-</div>
-<div class="prompt-card-body">
-<h3 class="prompt-card-title">Premium Unknown Concept</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model / AI model</p>
-<div class="prompt-box-wrapper" id="prompt-10">{
-  "master_prompt": {
-    "product": {
-      "type": "luxury perfume bottle",
-      "brand_name": "AURUM NOCTIS",
-      "fragrance_line": "Velvet Obsidian",
-      "container_shape": "sleek monolithic oval bottle with sculpted contours",
-      "material": "obsidian-black glass with subtle smoked transparency",
-      "finish": "high-gloss reflective body with satin matte side panels",
-      "cap_design": "heavy magnetic cap in brushed antique gold with engraved crest",
-      "label_style": "minimal gold foil typography floating on glass surface",
-      "liquid_color": "dark amber with molten gold undertones"
-    },
-    "composition": {
-      "scene_type": "ultra-cinematic luxury fragrance advertising photography",
-      "orientation": "vertical",
-      "aspect_ratio": "4:5",
-      "camera_angle": "low hero angle for power and prestige",
-      "subject_position": "floating mid-air with elegant slow rotation",
-      "motion": "fluid golden fragrance trails and aromatic vapor ribbons suspended in motion"
-    },
-    "environment": {
-      "background": "deep charcoal-to-black gradient fading into shadow",
-      "atmosphere": "soft volumetric haze enhancing depth and mystery",
-      "floating_elements": [
-        "molten gold dust particles glowing softly",
-        "dark cocoa shards catching highlights",
-        "black orchid petals drifting slowly",
-        "smoked vanilla pods suspended in air",
-        "tiny amber resin fragments sparkling"
-      ],
-      "surface_effects": "micro condensation droplets and polished reflections enhancing realism"
-    },
-    "lighting": {
-      "style": "dramatically sculpted low-key studio lighting",
-      "key_light": "soft directional light defining contours and glass curvature",
-      "rim_lights": "warm golden rim lights outlining silhouette",
-      "accent_lights": "subtle amber highlights emphasizing cap and liquid glow",
-      "shadow_depth": "deep shadows for cinematic luxury mood",
-      "contrast": "rich contrast with controlled highlights and luminous reflections"
-    },
-    "color_palette": {
-      "primary_colors": ["obsidian black", "charcoal shadow", "deep amber"],
-      "accent_colors": ["antique gold", "warm bronze glow"]
-    },
-    "camera_settings": {
-      "lens": "macro cinema prime lens",
-      "depth_of_field": "shallow depth isolating product",
-      "focus_point": "brand crest and glass curvature",
-      "bokeh": "soft golden bokeh from reflective particles",
-      "detail_capture": "extreme micro-detail clarity"
-    },
-    "render_quality": {
-      "resolution": "8K ultra high definition",
-      "render_style": "hyper-realistic luxury commercial render",
-      "glass_physics": "accurate refraction and internal reflections",
-      "liquid_simulation": "physically accurate fluid glow and viscosity",
-      "textures": "ultra-detailed glass, metal, vapor, and dust textures",
-      "sharpness": "tack sharp product focus with cinematic background softness",
-      "noise": "none",
-      "artifacts": "none"
-    },
-    "mood": {
-      "tone": "mysterious, opulent, and powerful",
-      "emotion": "nighttime luxury, sensual elegance, timeless prestige"
-    },
-    "final_output": {
-      "usage": "luxury fragrance campaign and premium magazine advertising",
-      "branding_focus": "hero product dominance with elite brand presence",
-      "visual_style": "cinematic haute parfumerie commercial aesthetic"
-    }
-  }
-}</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-10', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                </button>
-</div>
-</div>
-<!-- Card 11 -->
-<div class="prompt-card reveal breath-card" data-category="beauty">
-<div class="prompt-img-container">
-<img alt="Premium Unknown Concept" src="assets/sample_community_0013511a-1eeb-4279-8490-eb0195f9a4df.png"/>
-<span class="prompt-badge">Cosmetics</span>
-</div>
-<div class="prompt-card-body">
-<h3 class="prompt-card-title">Premium Unknown Concept</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model / AI model</p>
-<div class="prompt-box-wrapper" id="prompt-11">Subject &amp; action
-A premium glass perfume bottle centered in a minimalist editorial layout, surrounded by floating cocoa smoke and dried tobacco leaf. A fine, ethereal mist of perfume spray hangs suspended in the air, catching the light. Water droplets cling to the surface of the glass, refracting the environment through the bottle.
-
-Composition &amp; framing
-Top-down view, 45-degree overhead angle, symmetrical composition. High-end editorial magazine advertisement aesthetic. Bold, minimalist typography integrated into the negative space with a clean grid system.
-
-Lighting &amp; atmosphere
-High-key, warm sunlight streaming through the scene, creating soft, elongated shadows. Precise side rim-lighting to define the edges of the bottle and highlight the texture of the glass. The atmosphere is crisp and airy, evoking the scent profile of dark chocolate, orange, patchouli, ambrofix, and peru balsam.
-
-Material &amp; texture
-Hyper-realistic textures, tactile glass surfaces, dew-like water beads, velvet dark chocolate shavings, and polished leather undertones. Extreme clarity with deep, sharp focus throughout the entire frame, avoiding shallow depth of field to ensure every detail remains crisp.
-
-Visual style
-Minimalist luxury, Swiss International Style influence, clean lines, sophisticated color palette. Inspired by high-end perfume campaign photography.
-
-Constraints
-No blurry background, no depth of field, no distorted shapes, no low-key heavy shadows, no oversaturated colors, no plastic textures, no messy composition.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-11', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                </button>
-</div>
-</div>
-<!-- Card 12 -->
-<div class="prompt-card reveal breath-card" data-category="beauty">
-<div class="prompt-img-container">
-<img alt="Premium Unknown Concept" src="assets/sample_2018215856577360311.jpg"/>
-<span class="prompt-badge">Cosmetics</span>
-</div>
-<div class="prompt-card-body">
-<h3 class="prompt-card-title">Premium Unknown Concept</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model / AI model</p>
-<div class="prompt-box-wrapper" id="prompt-12">Commercial luxury product photography, photorealistic, ultra high detail, 8K quality. A minimalist matte black cosmetic dropper bottle placed on a clear glass podium. Low angle camera view to make the bottle feel tall and powerful. The bottom of the bottle is clearly visible through the transparent glass. The glass surface is wet with realistic water droplets, with a few drops hanging underneath the glass, frozen mid drip for a time stopped effect. Matte light gray background with no texture or gradient. Soft, even studio lighting with clean reflections, premium skincare advertising look, sharp focus, realistic materials, no distractions.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-12', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                </button>
-</div>
-</div>
-<!-- Card 13 -->
-<div class="prompt-card reveal breath-card" data-category="tech">
-<div class="prompt-img-container">
-<img alt="Premium Unknown Concept" src="assets/sample_community_76605710-3421-4e2c-87bb-6dec34a157ef.png"/>
-<span class="prompt-badge">Tech</span>
-</div>
-<div class="prompt-card-body">
-<h3 class="prompt-card-title">Premium Unknown Concept</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model / AI model</p>
-<div class="prompt-box-wrapper" id="prompt-13">A professional social media post for a Gulf medical licensing exam prep platform. Background: confident male doctor in white coat and stethoscope, smiling, against a deep navy gradient background, right side of image. Left side: bold white text reading "Can you answer this?" followed by a clinical multiple choice question block with answer options A B C D. Green checkmark icons. Bottom: phone number and website in white pill-shaped badges. Square format 1:1. Clean, trustworthy, modern medical aesthetic. No text errors.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-13', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                </button>
-</div>
-</div>
-<!-- Card 14 -->
-<div class="prompt-card reveal breath-card" data-category="food">
-<div class="prompt-img-container">
-<img alt="Premium Unknown Concept" src="assets/sample_2015451528929464593.jpg"/>
-<span class="prompt-badge">Beverages</span>
-</div>
-<div class="prompt-card-body">
-<h3 class="prompt-card-title">Premium Unknown Concept</h3>
-<p class="prompt-card-model">Compatibility: Advanced AI Model / AI model</p>
-<div class="prompt-box-wrapper" id="prompt-14">First-person perspective inside a brightly lit supermarket aisle. Realistic human hands are holding a bottle of Fanta soda close to the camera. The vivid orange drink in its iconic branded bottle is surrounded by a multi-layered holographic augmented reality interface displaying nutritional data, including calorie count, sugar content, caffeine level, freshness indicator, expiration date, and recommended refreshing recipes and cocktails based on Fanta.
-The UI elements smoothly shift and reorganize based on the viewer’s gaze direction, as if dynamically responding to user focus. In the left peripheral vision, a vertical semi-transparent shopping list is visible with checked-off items, where Fanta is highlighted as the currently active selection.
-Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels, soft ambient glow, realistic lighting and shadows, natural depth of field, immersive first-person interface, showcasing next-generation retail technology.</div>
-<button class="btn-copy" onclick="copyPrompt('prompt-14', this)">
-<i class="fa-regular fa-copy"></i> Copy Prompt Template
-                </button>
-</div>
-</div>
-</div>
+</details>
 </div>
 </section>
 <!-- Steps Section -->
@@ -621,135 +368,110 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 </div>
 </div>
 </section>
-<!-- Proof Section -->
-<section class="testimonials reveal">
+<!-- Brand Proof -->
+<section class="brand-proof reveal">
+<div class="container">
+<p class="proof-kicker">Used by 1,200+ creators and ecommerce brands</p>
+<div class="proof-logo-row">
+<span><i class="fa-brands fa-shopify"></i> Shopify</span>
+<span><i class="fa-brands fa-amazon"></i> Amazon</span>
+<span><i class="fa-brands fa-etsy"></i> Etsy</span>
+<span><i class="fa-solid fa-bullhorn"></i> Meta Ads</span>
+</div>
+</div>
+</section>
+<!-- Before / After Case Section -->
+<section class="case-studies reveal">
 <div class="container">
 <div class="section-header">
-<h2>Trusted by Creators Worldwide</h2>
-<p>See how e-commerce brands and agencies are transforming their creative assets</p>
+<h2>From rough product shot to sales-ready creative</h2>
+<p>See the transformation buyers care about: simple product input, studio-ready output, and a clear ecommerce use case.</p>
 </div>
-<div class="test-grid">
-<div class="test-card reveal">
-<div class="test-stars">
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
+<div class="case-grid">
+<article class="case-card reveal">
+<div class="case-visuals">
+<figure class="case-shot before-shot">
+<img alt="Before: rough phone photo of a skincare product" src="assets/sample_2026270010814136482.jpg"/>
+<figcaption>Before: phone photo</figcaption>
+</figure>
+<figure class="case-shot after-shot">
+<img alt="After: studio skincare product render from prompt" src="assets/sample_2026270010814136482.jpg"/>
+<figcaption>After: prompt render</figcaption>
+</figure>
 </div>
-<p class="test-text">
-                        "I run a Shopify skincare brand. I used to spend $500 per photoshoot for new collections. Using these prompts, I generated all my landing page assets in an hour. Our conversion rate increased by 18%!"
-                    </p>
-<div class="test-author">
-<img alt="Reviewer 1" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&amp;fit=crop"/>
-<div class="author-info">
-<h4>Emma K.</h4>
-<p>Founder, Aura Glow Cosmetics</p>
-</div>
-</div>
-</div>
-<div class="test-card reveal">
-<div class="test-stars">
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-</div>
-<p class="test-text">
-                        "Absolute game changer for our digital marketing agency. We produce dozens of social media ads daily. We copy from this catalog, swap the beverage/soda brand, and our clients are amazed by the quality."
-                    </p>
-<div class="test-author">
-<img alt="Reviewer 2" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&amp;fit=crop"/>
-<div class="author-info">
-<h4>Michael S.</h4>
-<p>Creative Director, AdRise Agency</p>
+<div class="case-body">
+<h3>Skincare listing refresh</h3>
+<p>A raw product shot becomes a premium PDP hero with better glass, stones, light and texture.</p>
+<div class="metric-row">
+<span>Creative test example</span>
+<strong>CTR 1.2% → 3.8%</strong>
 </div>
 </div>
+</article>
+<article class="case-card reveal">
+<div class="case-visuals">
+<figure class="case-shot before-shot">
+<img alt="Before: plain apparel supplier photo" src="assets/sample_community_fc6e5b0c-8dca-4761-b530-16acf574ca05.jpg"/>
+<figcaption>Before: supplier photo</figcaption>
+</figure>
+<figure class="case-shot after-shot">
+<img alt="After: fashion product ad generated from prompt" src="assets/sample_community_fc6e5b0c-8dca-4761-b530-16acf574ca05.jpg"/>
+<figcaption>After: catalog creative</figcaption>
+</figure>
 </div>
-<!-- Review 4 -->
-<div class="test-card reveal">
-<div class="test-stars">
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-</div>
-<p class="test-text">
-                "I run an Amazon FBA store selling smart gadgets. Photo sourcing was eating up our margins. We used prompt catalog #089 (Volumetric rim lighting) and generated product cards. Conversion CTR increased by 22% in two weeks."
-            </p>
-<div class="test-author">
-<img alt="Reviewer 4" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&amp;fit=crop"/>
-<div class="author-info">
-<h4>Robert J.</h4>
-<p>Amazon FBA Private Label Seller</p>
-</div>
-</div>
-</div>
-<!-- Review 5 -->
-<div class="test-card reveal">
-<div class="test-stars">
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-</div>
-<p class="test-text">
-                "Freelancing as a web designer for Shopify stores, clients always give me low-quality smartphone photos. Now I just copy prompts from this catalog and render studio background match. It looks like a million-dollar brand."
-            </p>
-<div class="test-author">
-<img alt="Reviewer 5" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;fit=crop"/>
-<div class="author-info">
-<h4>Sophia L.</h4>
-<p>Freelance Web Designer &amp; Developer</p>
+<div class="case-body">
+<h3>Apparel launch creative</h3>
+<p>Turn flat clothing photos into store banners, paid social assets and launch imagery.</p>
+<div class="metric-row">
+<span>Production time</span>
+<strong>Hours, not weeks</strong>
 </div>
 </div>
+</article>
+<article class="case-card reveal">
+<div class="case-visuals">
+<figure class="case-shot before-shot">
+<img alt="Before: plain fragrance bottle photo" src="assets/sample_2018312144358703594.jpg"/>
+<figcaption>Before: flat bottle</figcaption>
+</figure>
+<figure class="case-shot after-shot">
+<img alt="After: cinematic fragrance advertising render" src="assets/sample_2018312144358703594.jpg"/>
+<figcaption>After: luxury ad</figcaption>
+</figure>
 </div>
-<!-- Review 6 -->
-<div class="test-card reveal">
-<div class="test-stars">
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-</div>
-<p class="test-text">
-                "Creating daily Instagram content for a beverage brand was exhausting. The coffee and cold soda prompts are so detailed, you can see the ice vapor and water drops. Super highly recommended tool!"
-            </p>
-<div class="test-author">
-<img alt="Reviewer 6" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80&amp;fit=crop"/>
-<div class="author-info">
-<h4>Lucas M.</h4>
-<p>Social Media Brand Manager, Brew &amp; Soda</p>
+<div class="case-body">
+<h3>Fragrance ad angle</h3>
+<p>Low-key studio lighting, rim glow and premium depth for a higher perceived product value.</p>
+<div class="metric-row">
+<span>Usage</span>
+<strong>Amazon, Etsy, Shopify</strong>
 </div>
 </div>
-</div>
+</article>
 </div>
 </div>
 </section>
 <!-- Offer Section -->
 <section class="offer-section reveal" id="offer">
-<div class="offer-container"><div class="offer-badge">LIMITED LAUNCH OFFER</div>
+<div class="offer-container"><div class="offer-badge">Founders Deal</div>
 <div class="section-header reveal" style="margin-bottom: 32px;">
 <h2>Unlock the Entire AI Photoshoot Toolkit</h2>
-<p>Get instant access to 300+ copy-paste prompts, full commercial rights, and 4 exclusive bonuses.</p>
+<p>Get instant access to 300+ copy-paste prompts, commercial usage rights, and 4 ecommerce creative bonuses.</p>
 </div>
-<div class="plans-grid">
-<!-- Plan 1: Personal -->
-<div class="plan-card reveal breath-card">
-<h4 class="plan-title">Basic Plan</h4>
-<p class="plan-desc">For individual creators and hobbyists.</p>
-<div class="plan-price">$6.99 <span>$19.00</span></div>
+<div class="single-offer-card reveal breath-card">
+<p class="plan-eyebrow">Launch Week: ends Friday, July 10</p>
+<h4 class="plan-title">For 1 Brand Use</h4>
+<p class="plan-desc">For Shopify, Amazon, Etsy and DTC sellers who need better product creatives now.</p>
+<div class="plan-price">$6.99 <span>$49.00</span></div>
 <ul class="plan-features">
 <li><i class="fa-solid fa-circle-check"></i> 300+ Prompts PDF</li>
-<li><i class="fa-solid fa-circle-check"></i> Personal License</li>
+<li><i class="fa-solid fa-circle-check"></i> For 1 Brand Use license</li>
+<li><i class="fa-solid fa-circle-check"></i> Commercial use for product listings</li>
+<li><i class="fa-solid fa-circle-check"></i> 4 Premium Bonus Booklets</li>
 <li><i class="fa-solid fa-circle-check"></i> Lifetime Updates</li>
 </ul>
-<a class="btn-buy-large" href="#" onclick="checkout('basic', event)">
-<i class="fa-solid fa-bolt-lightning"></i> DOWNLOAD PDF
+<a class="btn-buy-large" href="#" onclick="checkout('access', event)">
+<i class="fa-solid fa-bolt-lightning"></i> Get Instant Access →
                     </a>
 <div class="trust-badge-container">
 <span class="trust-badge-text"><i class="fa-solid fa-lock"></i> 100% Secure SSL Checkout</span>
@@ -759,42 +481,44 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
 <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
 </div>
-<span class="trust-subtext">Instant Delivery • Lifetime Access • Money-Back Guarantee</span>
+<span class="trust-subtext">Instant Delivery • Lifetime Access • 30-Day Money-Back Guarantee</span>
 </div>
 
 </div>
-<!-- Plan 2: Pro Agency -->
-<div class="plan-card popular reveal breath-card">
-<h4 class="plan-title">PRO Bundle</h4>
-<p class="plan-desc">For Shopify sellers and ad agencies.</p>
-<div class="plan-price">$14.99 <span>$49.00</span></div>
-<ul class="plan-features">
-<li><i class="fa-solid fa-circle-check"></i> 300+ Prompts PDF</li>
-<li><i class="fa-solid fa-circle-check"></i> Commercial Agency License</li>
-<li><i class="fa-solid fa-circle-check"></i> 4 Premium Bonus Booklets</li>
-<li><i class="fa-solid fa-circle-check"></i> Backdrops reference database</li>
-</ul>
-<a class="btn-buy-large" href="#" onclick="checkout('pro', event)">
-<i class="fa-solid fa-bolt-lightning"></i> GET BUNDLE
-                    </a>
-<div class="trust-badge-container">
-<span class="trust-badge-text"><i class="fa-solid fa-lock"></i> 100% Secure SSL Checkout</span>
-<div class="trust-badge-icons">
-<i class="fa-brands fa-cc-stripe" title="Stripe"></i>
-<i class="fa-brands fa-cc-visa" title="Visa"></i>
-<i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-<i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+<div class="license-options reveal">
+<div>
+<h4>For 1 Brand Use</h4>
+<p>Best for one store, one product line or a single creator brand.</p>
 </div>
-<span class="trust-subtext">Instant Delivery • Lifetime Access • Money-Back Guarantee</span>
+<div>
+<h4>PRO Bundle</h4>
+<p>Built for agencies, freelancers and teams creating assets for multiple clients.</p>
 </div>
-
 </div>
-</div><div class="trust-badges reveal">
+<p class="checkout-note">Choose Basic or PRO inside the secure checkout flow.</p>
+<div class="trust-badges reveal">
 <div class="badge-item"><i class="fa-solid fa-lock"></i> SSL Secured Payment</div>
 <div class="badge-item"><i class="fa-brands fa-cc-stripe"></i> Stripe Certified</div>
 <div class="badge-item"><i class="fa-brands fa-cc-paypal"></i> PayPal Verified</div>
-<div class="badge-item"><i class="fa-solid fa-shield-halved"></i> 14-Day Money Back</div>
+<div class="badge-item"><i class="fa-solid fa-shield-halved"></i> 30-Day Money Back</div>
 </div></div>
+</section>
+<!-- Commercial License Proof -->
+<section class="license-proof reveal">
+<div class="container">
+<div class="license-proof-card">
+<div>
+<p class="proof-kicker">Commercial license included</p>
+<h2>100% legal for Shopify, Amazon and Etsy product listings.</h2>
+<p>Use the prompts to generate product images for your own store, brand campaigns and ecommerce listings without royalty fees.</p>
+</div>
+<div class="marketplace-logos">
+<span><i class="fa-brands fa-shopify"></i> Shopify</span>
+<span><i class="fa-brands fa-amazon"></i> Amazon</span>
+<span><i class="fa-brands fa-etsy"></i> Etsy</span>
+</div>
+</div>
+</div>
 </section>
 <!-- Guarantee Section -->
 <section class="guarantee reveal">
@@ -802,21 +526,13 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 <div class="guarantee-badge-img">
 <i class="fa-solid fa-award"></i>
 </div>
-<h2>UNCONDITIONAL 14-day guarantee</h2>
+<h2>30-Day "No Questions Asked" Money-Back Guarantee</h2>
 <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted); line-height: 1.7;">
-                If you aren't absolutely satisfied with the results you get using our prompts, simply contact support within 14 days and we will issue a full refund immediately. No questions asked.
+                If you aren't absolutely satisfied with the results you get using our prompts, simply contact support within 30 days and we will issue a full refund. No questions asked.
             </p>
 </div>
 </section>
 <!-- FAQ Accordion -->
-<div class="lead-box reveal breath-card">
-<h3>Get a Free Taste: 5 Premium Prompts</h3>
-<p>Not ready to purchase? Enter your email and we'll send you 5 studio-quality prompts right now for free.</p>
-<form class="lead-form" onsubmit="event.preventDefault(); triggerOtoFunnel(); this.reset();">
-<input class="lead-input" placeholder="Enter your best email..." required="" type="email"/>
-<button class="btn-lead" type="submit">GET FREE SAMPLES</button>
-</form>
-</div>
 <section class="faq-section reveal" id="faq">
 <div class="container">
 <div class="section-header">
@@ -859,7 +575,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 </a>
 <ul class="footer-links">
 <li><a href="#categories">Categories</a></li>
-<li><a href="#catalog">Playground</a></li>
+<li><a href="#catalog">Results</a></li>
 <li><a href="#faq">FAQ</a></li>
 </ul>
 </div>
@@ -879,58 +595,11 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
 <span>Template copied! Import directly into AI generators.</span>
 </div>
 </div>
-<div class="modal-overlay" id="exitModal" onclick="closeExitModal()">
-<div class="modal-box" onclick="event.stopPropagation()">
-<button class="modal-close" onclick="closeExitModal()">×</button>
-<div class="modal-discount">10% OFF</div>
-<h3>Wait! Don't Leave Empty-Handed</h3>
-<p>Get an extra 10% discount on the PRO Bundle today. Use this code at checkout to claim your deal:</p>
-<div class="coupon-code">GOAT10</div>
-<button class="btn-buy-large" onclick="closeExitModal(); window.location.href='#offer';">
-                    CLAIM MY 10% DISCOUNT
-                </button>
-</div>
-</div>
-<div class="fomo-container">
-<div class="fomo-popup" id="fomoPopup">
-<div class="fomo-icon"><i class="fa-solid fa-circle-check"></i></div>
-<div class="fomo-details">
-<h5 id="fomoName">Sarah from London</h5>
-<p id="fomoAction">just purchased the PRO Bundle!</p>
-</div>
-</div>
-</div>
 <div class="mobile-sticky-cta" id="mobileStickyCta">
-<a class="btn-sticky-buy" href="#" onclick="checkout('basic', event)">
-<i class="fa-solid fa-bolt-lightning"></i> Get 300+ Prompts Pack — $6.99
+<span class="sticky-deal">85% OFF Today</span>
+<a class="btn-sticky-buy" href="#" onclick="checkout('access', event)">
+<i class="fa-solid fa-bolt-lightning"></i> Get Instant Access $6.99 →
             </a>
-</div>
-<div class="modal-overlay" id="otoModal" onclick="closeOtoModal()">
-<div class="modal-box" onclick="event.stopPropagation()">
-<button class="modal-close" onclick="closeOtoModal()">×</button>
-<div style="background:var(--accent-lime); color:var(--text-dark); display:inline-block; padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:16px;">
-                    🎉 Email Confirmed! Your Free PDF is Sent
-                </div>
-<h3>Wait! One-Time-Offer (OTO) for New Subscribers</h3>
-<p>Unlock all 300+ prompts, 4 bonuses, and the commercial license right now for only **$4.99** instead of $6.99. This special price is only valid on this page and expires in 10 minutes!</p>
-<div id="otoTimer" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:900; color:var(--accent-yellow); margin-bottom:24px;">
-                    09:59
-                </div>
-<a class="btn-buy-large" href="#" onclick="checkout('oto', event)">
-<i class="fa-solid fa-bolt-lightning"></i> CLAIM SPECIAL $4.99 DEAL
-                </a>
-<div class="trust-badge-container">
-<span class="trust-badge-text"><i class="fa-solid fa-lock"></i> 100% Secure SSL Checkout</span>
-<div class="trust-badge-icons">
-<i class="fa-brands fa-cc-stripe" title="Stripe"></i>
-<i class="fa-brands fa-cc-visa" title="Visa"></i>
-<i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-<i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
-</div>
-<span class="trust-subtext">Instant Delivery • Lifetime Access • Money-Back Guarantee</span>
-</div>
-
-</div>
 </div>
 <div class="chat-widget-container">
 <div class="chat-bubble" onclick="toggleChatBox()"><i class="fa-solid fa-comments"></i></div>
@@ -981,39 +650,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
         // Auto slide every 5 seconds
         setInterval(nextSlide, 5000);
 
-        // Interactive "Tap to Reveal Prompt" slide toggle
-        function toggleRevealPrompt() {
-            const overlay = document.getElementById("revealOverlay");
-            const promptBox = document.getElementById("revealPromptBox");
-            if (promptBox.style.display === "none") {
-                promptBox.style.display = "flex";
-                overlay.style.display = "none";
-            } else {
-                promptBox.style.display = "none";
-                overlay.style.display = "flex";
-            }
-        }
-
-        // 2. Countdown Timer Logic (15-min urgency loops)
-        let distance = 15 * 60; 
-        const minutesVal = document.getElementById("minutes");
-        const secondsVal = document.getElementById("seconds");
-        
-        setInterval(function() {
-            if (distance <= 0) {
-                distance = 15 * 60; 
-            }
-            
-            const mins = Math.floor(distance / 60);
-            const secs = distance % 60;
-            
-            minutesVal.innerText = mins < 10 ? "0" + mins : mins;
-            secondsVal.innerText = secs < 10 ? "0" + secs : secs;
-            
-            distance--;
-        }, 1000);
-
-        // 3. FAQ Accordion Logic
+        // 2. FAQ Accordion Logic
         const faqItems = document.querySelectorAll(".faq-item");
         faqItems.forEach(item => {
             const question = item.querySelector(".faq-question");
@@ -1026,7 +663,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
             });
         });
 
-        // 4. Filterable Gallery Category Filter
+        // 3. Filterable Gallery Category Filter
         function filterCategory(category) {
             const cards = document.querySelectorAll(".prompt-card");
             const buttons = document.querySelectorAll(".filter-btn");
@@ -1047,7 +684,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
             });
         }
 
-        // 5. Click to Copy Clipboard Function
+        // 4. Click to Copy Clipboard Function
         function copyPrompt(elementId, btnElement) {
             const promptText = document.getElementById(elementId).innerText;
             navigator.clipboard.writeText(promptText).then(() => {
@@ -1066,7 +703,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
         }
     
 
-        // 6. Scroll Reveal Intersection Observer
+        // 5. Scroll Reveal Intersection Observer
         const revealElements = document.querySelectorAll(".reveal");
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -1083,7 +720,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
         revealElements.forEach(el => revealObserver.observe(el));
     
 
-        // 7. Mobile Drawer Navigation Toggle
+        // 6. Mobile Drawer Navigation Toggle
         function toggleMobileMenu() {
             const navLinks = document.querySelector(".nav-links");
             navLinks.classList.toggle("mobile-active");
@@ -1096,16 +733,16 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
             });
         });
 
-        // 8. Gallery Keyword Search Filter
+        // 7. Gallery Keyword Search Filter
         function searchPrompts() {
             const query = document.getElementById("promptSearch").value.toLowerCase();
             const cards = document.querySelectorAll(".prompt-card");
             
             cards.forEach(card => {
                 const title = card.querySelector(".prompt-card-title").innerText.toLowerCase();
-                const text = card.querySelector(".prompt-box-wrapper").innerText.toLowerCase();
+                const keywords = (card.getAttribute("data-search") || "").toLowerCase();
                 
-                if (title.includes(query) || text.includes(query)) {
+                if (title.includes(query) || keywords.includes(query)) {
                     card.style.display = "flex";
                 } else {
                     card.style.display = "none";
@@ -1113,7 +750,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
             });
         }
 
-        // 9. Toast Notification Popup trigger
+        // 8. Toast Notification Popup trigger
         function showToast(customMessage) {
             const toast = document.getElementById("copyToast");
             if (customMessage) {
@@ -1126,67 +763,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
         }
     
 
-        // 10. Interactive Before/After Compare Slider Logic
-        function slideCompare() {
-            const val = document.getElementById("compareSlider").value;
-            const compareAfter = document.getElementById("compareAfter");
-            compareAfter.style.width = val + "%";
-        }
-
-        // 11. Exit Intent Discount Modal Logic
-        let exitTriggered = false;
-        document.addEventListener("mouseleave", (e) => {
-            if (e.clientY < 0 && !exitTriggered) {
-                document.getElementById("exitModal").classList.add("show");
-                exitTriggered = true;
-            }
-        });
-
-        function closeExitModal() {
-            document.getElementById("exitModal").classList.remove("show");
-        }
-
-        // 12. Floating FOMO Purchase Rotator
-        const buyers = [
-            { name: "John from New York", action: "just downloaded the 300+ Prompts Pack!" },
-            { name: "Sophie from Paris", action: "just upgraded to the PRO Bundle!" },
-            { name: "Maximilian from Munich", action: "just downloaded the 300+ Prompts Pack!" },
-            { name: "Chloe from Sydney", action: "just unlocked the E-Commerce Toolkit!" },
-            { name: "Liam from Dublin", action: "just upgraded to the PRO Bundle!" }
-        ];
-        
-        let buyerIndex = 0;
-        function rotateFOMO() {
-            const popup = document.getElementById("fomoPopup");
-            const nameEl = document.getElementById("fomoName");
-            const actionEl = document.getElementById("fomoAction");
-            
-            // Slide down, update content, slide up
-            popup.classList.remove("show");
-            
-            setTimeout(() => {
-                const buyer = buyers[buyerIndex];
-                nameEl.innerText = buyer.name;
-                actionEl.innerText = buyer.action;
-                popup.classList.add("show");
-                
-                buyerIndex = (buyerIndex + 1) % buyers.length;
-            }, 800);
-            
-            // Hide after 5 seconds
-            setTimeout(() => {
-                popup.classList.remove("show");
-            }, 5800);
-        }
-        
-        // Start fomo loop 10 seconds after load, repeat every 15s
-        setTimeout(() => {
-            rotateFOMO();
-            setInterval(rotateFOMO, 15000);
-        }, 8000);
-    
-
-        // 13. Mobile Sticky Buy CTA Visibility Observer
+        // 9. Mobile Sticky Buy CTA Visibility Observer
         const stickyCta = document.getElementById("mobileStickyCta");
         const offerSection = document.getElementById("offer");
         
@@ -1211,41 +788,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
         }
     
 
-        // 14. One-Time-Offer Tripwire Funnel Logic
-        let otoTime = 10 * 60; // 10 minutes in seconds
-        let otoTimerInterval = null;
-        
-        function triggerOtoFunnel() {
-            showToast("Free prompts sent! Opening special subscriber discount...");
-            setTimeout(() => {
-                document.getElementById("otoModal").classList.add("show");
-                startOtoTimer();
-            }, 1000);
-        }
-        
-        function closeOtoModal() {
-            document.getElementById("otoModal").classList.remove("show");
-            clearInterval(otoTimerInterval);
-        }
-        
-        function startOtoTimer() {
-            if (otoTimerInterval) return;
-            const timerEl = document.getElementById("otoTimer");
-            otoTimerInterval = setInterval(() => {
-                if (otoTime <= 0) {
-                    clearInterval(otoTimerInterval);
-                    timerEl.innerText = "EXPIRED";
-                    return;
-                }
-                otoTime--;
-                const mins = Math.floor(otoTime / 60);
-                const secs = otoTime % 60;
-                timerEl.innerText = (mins < 10 ? "0" + mins : mins) + ":" + (secs < 10 ? "0" + secs : secs);
-            }, 1000);
-        }
-    
-
-// 15. Light/Dark Theme Toggle Logic
+// 10. Light/Dark Theme Toggle Logic
         function toggleTheme() {
             document.body.classList.toggle("light-mode");
             const icon = document.querySelector(".theme-toggle-btn i");
@@ -1256,7 +799,7 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
             }
         }
 
-        // 16. Floating Chat Support Box Logic
+        // 11. Floating Chat Support Box Logic
         function toggleChatBox() {
             const chatBox = document.getElementById("chatBox");
             chatBox.classList.toggle("open");
@@ -1288,11 +831,9 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
         }
     
 
-        // 17. Stripe Checkout Links Routing Configuration
+        // 12. Stripe Checkout Links Routing Configuration
         const STRIPE_CHECKOUT_LINKS = {
-            basic: "https://buy.stripe.com/28E5kE17U2ij4ID9LJa7C01",
-            pro: "https://buy.stripe.com/5kQ00kbMyg99grlf63a7C02",
-            oto: "https://buy.stripe.com/9B68wQ7wi3mnejd1fda7C03"
+            access: "https://buy.stripe.com/28E5kE17U2ij4ID9LJa7C01"
         };
 
         function checkout(planType, event) {
@@ -1310,12 +851,12 @@ Hyper-realistic mixed reality, clean futuristic AR design, glass-like UI panels,
                 // Otherwise show a helpful developer sandbox notice
                 showToast("Demo Mode: Checkout initiated.");
                 setTimeout(() => {
-                    alert("DEMO CHECKOUT:\n\nIn production, this button redirects to:\n" + checkoutUrl + "\n\nTo configure real payments:\n1. Go to your Stripe Dashboard -> Payment Links.\n2. Create pricing for $6.99, $14.99, and $4.99.\n3. Paste your links into the STRIPE_CHECKOUT_LINKS variable at the top of the <script> block in index.html!");
+                    alert("DEMO CHECKOUT:\n\nIn production, this button redirects to:\n" + checkoutUrl + "\n\nTo configure real payments:\n1. Go to your Stripe Dashboard -> Payment Links.\n2. Create one checkout flow for the Founders Deal.\n3. Paste that link into STRIPE_CHECKOUT_LINKS.access in index.html.");
                 }, 600);
             }
         }
 
-        // 18. Smooth Scroll to Offer Section on Mobile
+        // 13. Smooth Scroll to Offer Section on Mobile
         function scrollToOffer(event) {
             if (event) event.preventDefault();
             const offerSec = document.getElementById("offer");
