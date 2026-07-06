@@ -401,6 +401,76 @@ header {
     color: var(--accent-lime);
 }
 
+/* Demo Section */
+.demo-section {
+    background: var(--bg-black);
+    padding: 76px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+    gap: 34px;
+    align-items: center;
+}
+
+.demo-copy .proof-kicker {
+    text-align: left;
+}
+
+.demo-copy h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+.demo-copy p {
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+.demo-points {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.demo-points span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-white);
+    font-weight: 700;
+}
+
+.demo-points i {
+    color: var(--accent-lime);
+}
+
+.demo-cta {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 360px;
+}
+
+.demo-media {
+    background: var(--bg-dark-gray);
+    border: 1px solid rgba(158, 235, 71, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.42);
+}
+
+.demo-media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+}
+
 /* Pain points Section */
 .pain-points {
     background: var(--bg-black);
@@ -632,6 +702,47 @@ header {
 
 .cat-card-label i {
     color: var(--accent-lime);
+}
+
+/* What's Inside Section */
+.inside-section {
+    background: var(--bg-black);
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.inside-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1080px;
+    margin: 42px auto 0;
+}
+
+.inside-card {
+    background: var(--bg-dark-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 22px;
+    min-height: 172px;
+}
+
+.inside-card i {
+    color: var(--accent-lime);
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+}
+
+.inside-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+    margin-bottom: 9px;
+}
+
+.inside-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
 }
 
 /* Interactive Prompt Gallery Section */
@@ -1248,6 +1359,23 @@ header {
     white-space: nowrap;
 }
 
+.case-collage {
+    max-width: 960px;
+    margin: 34px auto 0;
+    border: 1px solid rgba(158, 235, 71, 0.22);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-dark-gray);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.case-collage img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/8;
+    object-fit: cover;
+}
+
 /* Guarantee Block */
 .guarantee-block {
     background: var(--bg-black);
@@ -1392,6 +1520,17 @@ footer {
 }
 
 /* Responsive Breakpoints */
+@media (max-width: 960px) {
+    .demo-grid,
+    .compat-card {
+        grid-template-columns: 1fr;
+    }
+
+    .inside-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -1413,6 +1552,40 @@ footer {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+
+    .demo-section,
+    .inside-section,
+    .case-studies,
+    .compatibility-section {
+        padding-top: 58px;
+        padding-bottom: 58px;
+    }
+
+    .demo-copy .proof-kicker,
+    .compat-card .proof-kicker {
+        text-align: center;
+    }
+
+    .demo-copy {
+        text-align: center;
+    }
+
+    .demo-cta {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .inside-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-collage img {
+        aspect-ratio: 4/3;
+    }
+
+    .compat-list {
+        justify-content: center;
     }
 }
 
@@ -1606,7 +1779,7 @@ footer {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 24px;
-    height: 40px;
+    min-height: 40px;
 }
 
 .plan-price {
@@ -1739,6 +1912,78 @@ footer {
 .marketplace-logos {
     display: grid;
     gap: 12px;
+}
+
+.compatibility-section {
+    background: var(--bg-black);
+    padding: 0 0 80px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.compat-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+    gap: 28px;
+    align-items: center;
+    background: var(--bg-dark-gray);
+    border: 1px solid rgba(158, 235, 71, 0.2);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.compat-card .proof-kicker {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.compat-card h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.55rem, 3vw, 2.25rem);
+    line-height: 1.08;
+    margin-bottom: 14px;
+}
+
+.compat-card p {
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+.compat-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.compat-list span {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.035);
+    color: var(--text-white);
+    font-size: 0.88rem;
+    font-weight: 800;
+    padding: 10px 13px;
+}
+
+@media (max-width: 960px) {
+    .compat-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .compatibility-section {
+        padding: 58px 0;
+    }
+
+    .compat-card .proof-kicker {
+        text-align: center;
+    }
+
+    .compat-list {
+        justify-content: center;
+    }
 }
 
 /* CSS 3D Book Mockup */
@@ -2247,7 +2492,7 @@ body.light-mode .hero {
     background: linear-gradient(180deg, #f5f4f0 0%, #e3edf2 50%, #f5f4f0 100%);
 }
 
-body.light-mode .plans-grid, body.light-mode .pain-card, body.light-mode .target-card, body.light-mode .comp-card, body.light-mode .prompt-card, body.light-mode .step-card, body.light-mode .test-card, body.light-mode .faq-item, body.light-mode .lead-box {
+body.light-mode .plan-card, body.light-mode .demo-media, body.light-mode .inside-card, body.light-mode .case-card, body.light-mode .case-collage, body.light-mode .compat-card, body.light-mode .license-proof-card, body.light-mode .pain-card, body.light-mode .target-card, body.light-mode .comp-card, body.light-mode .prompt-card, body.light-mode .step-card, body.light-mode .test-card, body.light-mode .faq-item, body.light-mode .lead-box {
     background: #ffffff;
     border-color: rgba(0, 0, 0, 0.08);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -2445,8 +2690,7 @@ body.light-mode .chat-input-field {
 /* Reposition chat widget on mobile to float above sticky buy button */
 @media (max-width: 768px) {
     .chat-widget-container {
-        bottom: 96px !important;
-        right: 16px !important;
+        display: none !important;
     }
 }
 
