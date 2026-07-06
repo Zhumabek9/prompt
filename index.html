@@ -47,7 +47,7 @@
 <li><a href="#demo">Demo</a></li>
 <li><a href="#catalog">Results</a></li>
 <li><a href="#faq">FAQ</a></li>
-<li><a class="cta-nav" href="#offer">Get Instant Access →</a></li>
+<li><a class="cta-nav" href="#offer" onclick="scrollToOffer(event)">Get Instant Access →</a></li>
 <li><button class="theme-toggle-btn" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button></li></ul>
 </div>
 </header>
@@ -82,7 +82,7 @@
 </div>
 </div>
 </div>
-<a class="cta-btn" href="#offer">
+<a class="cta-btn" href="#offer" onclick="scrollToOffer(event)">
 <i class="fa-solid fa-cart-shopping"></i> Get Instant Access →
             </a>
 </div>
@@ -113,7 +113,7 @@
 <span><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt formula</span>
 <span><i class="fa-solid fa-bag-shopping"></i> Store-ready output</span>
 </div>
-<a class="cta-btn demo-cta" href="#offer"><i class="fa-solid fa-bolt-lightning"></i> Get Instant Access →</a>
+<a class="cta-btn demo-cta" href="#offer" onclick="scrollToOffer(event)"><i class="fa-solid fa-bolt-lightning"></i> Get Instant Access →</a>
 </div>
 <div class="demo-media">
 <img alt="20-second workflow demo from rough product photo to polished ecommerce creative" src="assets/demo_workflow_20s.webp"/>
@@ -718,7 +718,7 @@
 </div>
 <div class="mobile-sticky-cta" id="mobileStickyCta">
 <span class="sticky-deal">85% OFF Today</span>
-<a class="btn-sticky-buy" href="#" onclick="checkout('basic', event)">
+<a class="btn-sticky-buy" href="#offer" onclick="scrollToOffer(event)">
 <i class="fa-solid fa-bolt-lightning"></i> Get Instant Access $6.99 →
             </a>
 </div>
@@ -979,12 +979,23 @@
             }
         }
 
-        // 13. Smooth Scroll to Offer Section on Mobile
+        // 13. Smooth Scroll to Offer Section
         function scrollToOffer(event) {
             if (event) event.preventDefault();
             const offerSec = document.getElementById("offer");
             if (offerSec) {
-                offerSec.scrollIntoView({ behavior: "smooth", block: "start" });
+                const navLinks = document.querySelector(".nav-links");
+                if (navLinks) navLinks.classList.remove("mobile-active");
+
+                const alignOffer = (behavior = "smooth") => {
+                    const headerOffset = window.innerWidth <= 768 ? 82 : 96;
+                    const top = offerSec.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top, behavior });
+                };
+
+                alignOffer();
+                setTimeout(() => alignOffer(), 450);
+                setTimeout(() => alignOffer(), 1200);
             }
         }
     </script></body>

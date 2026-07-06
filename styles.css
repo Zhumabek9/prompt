@@ -1021,6 +1021,7 @@ header {
     background: linear-gradient(180deg, #000000 0%, #001f2d 50%, #000000 100%);
     padding: 80px 0;
     border-bottom: 1px solid var(--border-color);
+    scroll-margin-top: 96px;
 }
 
 .offer-container {
@@ -1587,6 +1588,18 @@ footer {
     .compat-list {
         justify-content: center;
     }
+
+    .offer-section {
+        scroll-margin-top: 82px;
+    }
+
+    .cta-btn {
+        animation: none;
+    }
+
+    .cta-btn:hover {
+        transform: none;
+    }
 }
 
 /* Mobile Menu & Drawer Toggle */
@@ -1702,6 +1715,7 @@ footer {
     bottom: 24px;
     right: 24px;
     z-index: 1000;
+    pointer-events: none;
 }
 
 .toast {
@@ -1714,6 +1728,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
+    pointer-events: auto;
     transform: translateY(100px);
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2303,7 +2318,7 @@ footer {
     backdrop-filter: blur(12px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 18px;
-    z-index: 998;
+    z-index: 1200;
     display: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -2341,7 +2356,7 @@ footer {
     backdrop-filter: blur(12px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 18px;
-    z-index: 998;
+    z-index: 1200;
     display: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
