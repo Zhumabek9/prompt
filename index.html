@@ -218,13 +218,123 @@ src="https://www.facebook.com/tr?id=973666985702794&ev=PageView&noscript=1"
 <p>Deliver dozens of premium ad creatives, flatlays, and lifestyle scenes for client product lines without leaving your desk.</p>
 </div>
 <div class="target-card reveal breath-card">
+<!-- Problem / Pain Points Section -->
+<section class="pain-points reveal">
+<div class="container">
+<div class="section-header">
+<h2>Already tried to generate product photos?</h2>
+<p>Most creators get blocked by common mistakes, poor realism, or generic textures.</p>
+</div>
+<div class="pain-grid">
+<div class="pain-card reveal">
+<h3>The Common AI Blunders</h3>
+<ul class="pain-list">
+<li>
+<i class="fa-solid fa-circle-xmark"></i>
+<div>
+<strong>Generic Plastic Look</strong>
+<p>Without exact material prompts, objects render with unnatural shiny reflections resembling cheap plastic toys.</p>
+</div>
+</li>
+<li>
+<i class="fa-solid fa-circle-xmark"></i>
+<div>
+<strong>Blurred Brand Details</strong>
+<p>Standard text inputs blur brand labels and product packaging, making your mockups unusable for stores.</p>
+</div>
+</li>
+<li>
+<i class="fa-solid fa-circle-xmark"></i>
+<div>
+<strong>Flat Backdrop Lighting</strong>
+<p>Simple prompts fail to cast realistic volumetric shadows, leaving items floating with no contact surface.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="pain-card reveal" style="border-color: var(--accent-lime);">
+<h3 style="color: var(--accent-lime);">How the 300+ Prompts Solve It</h3>
+<ul class="pain-list">
+<li>
+<i class="fa-solid fa-circle-check" style="color: var(--accent-lime);"></i>
+<div>
+<strong>Refraction &amp; Light Caustics</strong>
+<p>Our templates utilize professional studio lighting vocabulary that tells the AI precisely how light refracts through glass and water.</p>
+</div>
+</li>
+<li>
+<i class="fa-solid fa-circle-check" style="color: var(--accent-lime);"></i>
+<div>
+<strong>High-Contrast Textures</strong>
+<p>Includes macro details for wool, knit, matte glass, frosted plastic, and textured stone for high fidelity.</p>
+</div>
+</li>
+<li>
+<i class="fa-solid fa-circle-check" style="color: var(--accent-lime);"></i>
+<div>
+<strong>Volumetric Studio Shadows</strong>
+<p>Every prompt dictates drop shadows, directional studio softboxes, and ground contact points so products feel physical.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Target Section -->
+<section class="target reveal">
+<div class="container">
+<div class="section-header">
+<h2>THIS PACK IS FOR YOU IF:</h2>
+<p>No matter your skill level, this toolkit will immediately boost your e-commerce creative workflows.</p>
+</div>
+<div class="target-grid">
+<div class="target-card reveal breath-card">
+<h3>Shopify &amp; Amazon Sellers</h3>
+<p>Stop spending thousands on photographers. Launch new listings, testing angles, colorways, and backdrops in minutes instead of weeks.</p>
+</div>
+<div class="target-card reveal breath-card">
+<h3>Ad &amp; Creative Agencies</h3>
+<p>Deliver dozens of premium ad creatives, flatlays, and lifestyle scenes for client product lines without leaving your desk.</p>
+</div>
+<div class="target-card reveal breath-card">
 <h3>Graphic &amp; UX Designers</h3>
 <p>Access high-end product placeholders, mockups, and banner assets to elevate web design presentations and lookbooks.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Before / After Section -->
+<!-- Campaign Carousel Section -->
+<section class="campaign-carousel reveal" id="campaigns" style="padding: 80px 0; background: var(--bg-card);">
+    <div class="container text-center">
+        <div class="section-header">
+            <h2>Editorial & Campaign Mockups</h2>
+            <p>Generate high-end fashion, travel, and lifestyle layouts that rival top global brands.</p>
+        </div>
+        <div class="hero-carousel" style="max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.5); aspect-ratio: 3/4; height: auto;">
+            <button class="hero-arrow prev" onclick="prevSlide2()">‹</button>
+            <button class="hero-arrow next" onclick="nextSlide2()">›</button>
+            <div class="hero-carousel-track" id="campaignTrack">
+                <img src="assets/carousel_campaigns_1.jpg" alt="Luxury Brand Campaign Collages" style="object-fit: cover;">
+                <img src="assets/carousel_campaigns_2.jpg" alt="Travel and Lifestyle Campaign Collages" style="object-fit: cover;">
+                <img src="assets/carousel_campaigns_3.jpg" alt="Outdoor Performance Campaign Collages" style="object-fit: cover;">
+                <img src="assets/carousel_campaigns_4.jpg" alt="Tech and Lifestyle Campaign Collages" style="object-fit: cover;">
+                <img src="assets/carousel_campaigns_5.jpg" alt="Sports and Gaming Campaign Collages" style="object-fit: cover;">
+                <img src="assets/carousel_campaigns_6.jpg" alt="Gadget and Audio Campaign Collages" style="object-fit: cover;">
+                <img src="assets/carousel_campaigns_7.jpg" alt="Fashion Campaign Collages" style="object-fit: cover;">
+            </div>
+            <div class="hero-dots" id="campaignDots">
+                <button class="hero-dot active" onclick="goToSlide2(0)"></button>
+                <button class="hero-dot" onclick="goToSlide2(1)"></button>
+                <button class="hero-dot" onclick="goToSlide2(2)"></button>
+                <button class="hero-dot" onclick="goToSlide2(3)"></button>
+                <button class="hero-dot" onclick="goToSlide2(4)"></button>
+                <button class="hero-dot" onclick="goToSlide2(5)"></button>
+                <button class="hero-dot" onclick="goToSlide2(6)"></button>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Categories Section -->
 <section class="categories reveal" id="categories">
 <div class="container">
@@ -788,11 +898,44 @@ src="https://www.facebook.com/tr?id=973666985702794&ev=PageView&noscript=1"
         // Auto slide every 5 seconds
         setInterval(nextSlide, 5000);
 
+        // Campaign Carousel Logic
+        let slideIndex2 = 0;
+        const track2 = document.getElementById("campaignTrack");
+        const slides2 = track2 ? track2.children : [];
+        const dotsBox = document.getElementById("campaignDots");
+        const dots2 = dotsBox ? dotsBox.querySelectorAll(".hero-dot") : [];
+        const totalSlides2 = slides2.length;
+
+        function updateSlider2() {
+            if(!track2) return;
+            track2.style.transform = `translateX(-${slideIndex2 * 100}%)`;
+            dots2.forEach((dot, idx) => {
+                dot.classList.toggle("active", idx === slideIndex2);
+            });
+        }
+
+        function nextSlide2() {
+            if(totalSlides2 === 0) return;
+            slideIndex2 = (slideIndex2 + 1) % totalSlides2;
+            updateSlider2();
+        }
+
+        function prevSlide2() {
+            if(totalSlides2 === 0) return;
+            slideIndex2 = (slideIndex2 - 1 + totalSlides2) % totalSlides2;
+            updateSlider2();
+        }
+
+        function goToSlide2(idx) {
+            slideIndex2 = idx;
+            updateSlider2();
+        }
+
+        if (track2) {
+            setInterval(nextSlide2, 5000);
+        }
+
         // 2. FAQ Accordion Logic
-        const faqItems = document.querySelectorAll(".faq-item");
-        faqItems.forEach(item => {
-            const question = item.querySelector(".faq-question");
-            question.addEventListener("click", () => {
                 const isActive = item.classList.contains("active");
                 faqItems.forEach(i => i.classList.remove("active"));
                 if (!isActive) {
